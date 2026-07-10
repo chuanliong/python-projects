@@ -7,10 +7,15 @@ df["Total Liability"] = df["BEL"] + df["Risk Adjustment"]
 
 total = df[["BEL", "Risk Adjustment", "Total Liability"]].sum()
 
-print(df)
-print("\nTotal:")
-print(total)  
 
-high_risk = df[df["Risk Factor"] > 0.05]
-print("\nHigh Risk Contracts:")
-print(high_risk)
+sorted_df = df.sort_values("BEL", ascending=False)
+print("\nContracts sorted by BEL (highest first):")
+print(sorted_df)
+
+grouped = df.groupby("Type")["BEL"].sum()
+print("\nTotal BEL by Contract Type:")
+print(grouped)
+
+grouped_ra = df.groupby("Type")["Risk Factor"].mean()
+print("\nAverage Risk Factor by Contract Type:")
+print(grouped_ra)
