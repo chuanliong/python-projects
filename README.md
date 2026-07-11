@@ -1,6 +1,6 @@
-# Python Learning Journey - IFRS 17 and Actuarial Projects
+# Python Learning Journey
 
-A collection of Python projects combining actuarial domain knowledge with programming skills.
+A collection of Python projects.
 
 ## Python Fundamentals
 - `hello.py` - First Python program
